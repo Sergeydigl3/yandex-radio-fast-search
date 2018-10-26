@@ -6,6 +6,7 @@ String.prototype.format = String.prototype.f = function () {
     });
 };
 
+if (localStorage['default_link'] == null) localStorage['default_link'] = 'https://soundcloud.com/search?q={0}';
 if (localStorage['default_name'] == null) localStorage['default_name'] = 'SoundCloud';
 
 $(".head__right").prepend("<a id=\"getsearch\" class=\"getsearch\">Найти в " + localStorage['default_name'] + "</a>");
