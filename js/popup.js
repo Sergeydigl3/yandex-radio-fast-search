@@ -18,11 +18,13 @@ const yaLink = 'https://music.yandex.ru/search?text={0}';
 const yaName = 'Yandex.Music';
 
 function setPreset(value) {
-    localStorage['default_link'] = value;
+    chrome.storage.sync.set({"default_link": value});
+    // localStorage['default_link'] = value;
     console.log(localStorage['default_link']);
 }
 function setName(value) {
-    localStorage['default_name'] = value;
+    chrome.storage.sync.set({"default_name": value});
+    // localStorage['default_name'] = value;
     console.log(localStorage['default_name']);
 }
 document.getElementById('vk').addEventListener("click", function (){setName(vkName); setPreset(vkLink);});

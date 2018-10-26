@@ -6,6 +6,14 @@ String.prototype.format = String.prototype.f = function () {
     });
 };
 
+chrome.storage.sync.get(['default_link'], function(result){
+    localStorage['temp_link'] = result.default_link
+});
+
+chrome.storage.sync.get(['default_name'], function(result){
+    localStorage['temp_name'] = result.default_name
+});
+
 if (localStorage['default_link'] == null) localStorage['default_link'] = 'https://soundcloud.com/search?q={0}';
 if (localStorage['default_name'] == null) localStorage['default_name'] = 'SoundCloud';
 
@@ -20,9 +28,12 @@ function get_name() {
 }
 
 function generate_link(full_request) {
-    console.log(localStorage['default_link']);
+    chrome.storage.sync.get(['default_link'], function(result){
+        localStorage['temp_link'] = result.default_link
+    });
+    console.log(localStorage['temp_link']);
     console.log(full_request);
-    var full_link = localStorage['default_link'].format(full_request);
+    var full_link = localStorage['temp_link'].format(full_request);
     window.open(full_link)
 }
 
