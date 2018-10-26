@@ -178,9 +178,9 @@
             console.log(localStorage['default_link'])
             localStorage['default_link'] = value;
         }
-        document.getElementById('vk').addEventListener("click", setPreset(vkLink));
-        document.getElementById('sc').addEventListener("click", setPreset(scLink));
-        document.getElementById('ya').addEventListener("click", setPreset(yaLink));
+        document.getElementById('vk').addEventListener("click", function (){setPreset(vkLink)});
+        document.getElementById('sc').addEventListener("click", function (){setPreset(scLink)});
+        document.getElementById('ya').addEventListener("click", function (){setPreset(yaLink)});
 
 	</script>
 </body>
