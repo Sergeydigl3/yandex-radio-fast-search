@@ -64,16 +64,16 @@
 		.preset_item:nth-child(3n) {
 			margin-right: 0;
 		}
-		.vk {
+		#vk {
 			line-height: calc(var(--main-size)*4);
 			background: #4d7198;
 			color: #fff;
 		}
-		.sc {
+		#sc {
 			background: #ff7700;
 			color: #fff;
 		}
-		.ya {
+		#ya {
 			background: #ffcc00;
 			color: #ff3432;
 			font-weight: 900;
@@ -142,9 +142,9 @@
 		<div class="menu">
 			<h2>Пресеты:</h2>
 			<div class="presets">
-				<button class="preset_item vk"><i class="fab fa-vk"></i></button>
-				<button class="preset_item sc"><i class="fab fa-soundcloud"></i></button>
-				<button class="preset_item ya"><i class="fab fa-yandex"></i></button>
+				<button id="vk" class="preset_item"><i class="fab fa-vk"></i></button>
+				<button id="sc" class="preset_item"><i class="fab fa-soundcloud"></i></button>
+				<button id="ya" class="preset_item"><i class="fab fa-yandex"></i></button>
 			</div>
 			<button id="new_sets" class="new_sets">Создать</button>
 			<div id="create_sets" class="create_sets">
@@ -158,15 +158,27 @@
 	</div>
 	<script>
 		function showHide() {
-		    console.log(document.getElementById('create_sets').style.display)
+		    console.log(document.getElementById('create_sets').style.display);
 			if (document.getElementById('create_sets').style.display=="none") {
 				document.getElementById('create_sets').style.display="block"
 			}else {
 					document.getElementById('create_sets').style.display="none"
 				}
 		}
-        document.getElementById('create_sets').style.display="none"
+        document.getElementById('create_sets').style.display="none";
 		document.getElementById('new_sets').addEventListener("click", showHide);
+
+		var link = 'https://soundcloud.com/search?q={0}';
+        var vkLink = 'https://vk.com/audios318245880?q={0}';
+        var scLink = 'https://soundcloud.com/search?q={0}';
+        var yaLink = 'https://music.yandex.ru/search?text={0}';
+        function setPreset(value) {
+            link = value;
+        }
+        document.getElementById('vk').addEventListener("click", setPreset(vkLink));
+        document.getElementById('sc').addEventListener("click", setPreset(scLink));
+        document.getElementById('ya').addEventListener("click", setPreset(yaLink));
+
 	</script>
 </body>
 </html>
