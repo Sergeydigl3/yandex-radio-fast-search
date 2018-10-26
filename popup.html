@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<style>
 		:root {
-			--main-size: 15px;
+										  --main-size: 15px;
 		}
 		*{margin: 0;}
 		body {
@@ -59,6 +59,7 @@
 		.preset_item:nth-child(1),
 		.preset_item:nth-child(2),
 		.preset_item:nth-child(3) {
+            -webkit-filter:brightness(70%);
 			margin-top:calc(var(--main-size)*1);
 		}
 		.preset_item:nth-child(3n) {
@@ -84,7 +85,7 @@
 			transform:translateY(-0.64vh);
 		}
 		.preset_item:focus {
-			-webkit-filter:brightness(90%);
+			-webkit-filter:brightness(120%);
 			transform:translateY(0.0vh);
 			transition: 0.3s;
 		}
@@ -168,12 +169,14 @@
         document.getElementById('create_sets').style.display="none";
 		document.getElementById('new_sets').addEventListener("click", showHide);
 
-		var link = 'https://soundcloud.com/search?q={0}';
+		if (localStorage['default_link'] == null) localStorage['default_link'] = 'https://soundcloud.com/search?q={0}';
         var vkLink = 'https://vk.com/audios318245880?q={0}';
         var scLink = 'https://soundcloud.com/search?q={0}';
         var yaLink = 'https://music.yandex.ru/search?text={0}';
+
         function setPreset(value) {
-            link = value;
+            console.log(localStorage['default_link'])
+            localStorage['default_link'] = value;
         }
         document.getElementById('vk').addEventListener("click", setPreset(vkLink));
         document.getElementById('sc').addEventListener("click", setPreset(scLink));
