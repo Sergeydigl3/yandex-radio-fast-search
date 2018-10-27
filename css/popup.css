@@ -6,10 +6,17 @@ body {
     width: calc(var(--main-size)*16.2);
     text-align: center;
     background: #fff;
+    font: calc(var(--main-size)*1)/calc(var(--main-size)*1) Arial,Helvetica,sans-serif;
+}
+header {
+    height: calc(var(--main-size)*3);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 h1 {
     text-align: center;
-    font-size:calc(var(--main-size)*1.33)
+    font-size:calc(var(--main-size)*1.33);
 }
 h2 {
     font-size:calc(var(--main-size)*1);
