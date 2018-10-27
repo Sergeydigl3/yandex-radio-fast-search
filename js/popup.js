@@ -2,10 +2,10 @@ function showHide() {
     console.log(document.getElementById('create_sets').style.display);
     if (document.getElementById('create_sets').style.display == "none") {
         document.getElementById('create_sets').style.display = "block";
-        document.getElementById('new_set').style.background = "#ffdb4d";
+        document.getElementById('new_sets').style.background = "#ffdb4d";
     } else {
         document.getElementById('create_sets').style.display = "none";
-        document.getElementById('new_set').style.background = "#ffffff";
+        document.getElementById('new_sets').style.background = "#ffffff";
     }
 
 }
