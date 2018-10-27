@@ -8,13 +8,19 @@ function showHide() {
         document.getElementById('new_sets').style.background = "#ffffff";
     }
 }
-function
+function hideCreateSet(value) {
+    document.getElementById(value).addEventListener("focus", function () {
+        document.getElementById('create_sets').style.display = "none";
+        document.getElementById('new_sets').style.background = "#ffffff";
+    });
+}
 
 document.getElementById('create_sets').style.display = "none";
 document.getElementById('new_sets').addEventListener("click", showHide);
-document.getElementById('vk').addEventListener("click", showHide);
-document.getElementById('sc').addEventListener("click", showHide);
-document.getElementById('ya').addEventListener("click", showHide);
+
+hideCreateSet('vk');
+hideCreateSet('sc');
+hideCreateSet('ya');
 
 const vkLink = 'https://vk.com/audios318245880?q={0}';
 const vkName = 'VK';
