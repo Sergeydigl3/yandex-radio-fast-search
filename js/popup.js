@@ -53,7 +53,14 @@ document.getElementById('ya').addEventListener("click", function () {
     setName(yaName);
     setPreset(yaLink);
 });
-
-document.getElementById('save').addEventListener('click', function () {
-    temp_link = document.getElementById('set_link').innerHTML
-})
+var temp_link;
+document.getElementById('save_btn').addEventListener('click', function () {
+    if (document.getElementById('set_link').value == "") {
+        document.getElementById('set_link').style.border = "3px solid #ff3432";
+    }
+    else {
+        temp_link = document.getElementById('set_link').value;
+        document.getElementById('set_link').style.border = "3px solid #228b22";
+        console.log(temp_link);
+    }
+});

@@ -167,7 +167,8 @@ h3 {
     padding: 10px;
     border: 1px dashed #ffdb4d;
     outline: none;
-    color: #fff;
+    color: #aaa;
+    border-color: ;
 }
 .input:focus {
     border: 3px solid #ffdb4d;
