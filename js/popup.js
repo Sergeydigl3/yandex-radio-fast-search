@@ -8,6 +8,7 @@ function showHide() {
         document.getElementById('new_sets').style.background = "#ffffff";
     }
 }
+
 function hideCreateSet(value) {
     document.getElementById(value).addEventListener("focus", function () {
         document.getElementById('create_sets').style.display = "none";
