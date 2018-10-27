@@ -53,3 +53,7 @@ document.getElementById('ya').addEventListener("click", function () {
     setName(yaName);
     setPreset(yaLink);
 });
+
+document.getElementById('save').addEventListener('click', function () {
+    temp_link = document.getElementById('set_link').innerHTML
+})
