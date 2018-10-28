@@ -20,7 +20,9 @@
 			<div id="create_sets" class="create_sets">
 				<div class="row">
 				  <span>
-					<label for="set_link">Добивать свой пресет</label><input class="input" id="set_link" type="text" placeholder="https://soundcloud.com/search?q={0}" />
+					<label for="set_link">Добивать свой пресет</label>
+					  <input aria-invalid="true" aria-describedby="error" spellcheck="false" class="input" id="set_link" type="text" placeholder="https://soundcloud.com/search?q={0}" />
+					  <strong text-align='left' id="error1"><font id='error_text' color="red"></font></strong>
 				  </span>
 				</div>
 				<button id="save_btn" class="save">Сохранить</button>
