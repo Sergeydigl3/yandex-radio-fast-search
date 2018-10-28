@@ -71,7 +71,8 @@ document.getElementById('ya').addEventListener("click", function () {
 const input = document.getElementById('set_link');
 input.addEventListener("input", function () {
     if (input.value === "") {
-        set_input_border("3px solid #ffdb4d")
+        set_input_error('');
+        set_input_border("3px solid #ffdb4d");
     }
     else {
         const result = check_rules(input.value);
