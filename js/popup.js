@@ -46,7 +46,7 @@ function setPreset(value) {
 
 function setName(value) {
     chrome.storage.sync.set({"default_name": value});
-    localStorage['default_link'] = value;
+    localStorage['default_name'] = value;
     console.log(localStorage['default_name']);
 }
 
