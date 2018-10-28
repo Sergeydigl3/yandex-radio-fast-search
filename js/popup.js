@@ -40,11 +40,13 @@ function set_input_border(border) {
 
 function setPreset(value) {
     chrome.storage.sync.set({"default_link": value});
+    localStorage['default_link'] = value;
     console.log(localStorage['default_link']);
 }
 
 function setName(value) {
     chrome.storage.sync.set({"default_name": value});
+    localStorage['default_link'] = value;
     console.log(localStorage['default_name']);
 }
 
@@ -109,7 +111,6 @@ input.addEventListener("blur", function () {
             break;
     }
 });
-
 input.addEventListener("focus", function () {
     const temp_border = input.style.border;
     switch (temp_border) {
@@ -124,3 +125,10 @@ input.addEventListener("focus", function () {
             break;
     }
 });
+
+document.getElementById('save_btn').addEventListener("click", function () {
+    if (check_rules(input.value) === 3) {
+        setPreset(input.value);
+        setName(input.value.replace('https://','').replace('http://','').split('/')[0]);
+        console.log('SAVED');
+    }});

@@ -50,10 +50,7 @@ h3 {
     height: calc(var(--main-size) * 4);
     border-radius: 50%;
     font-size: calc(var(--main-size) * 2);
-    margin: 20px 10px 0 5px;
-    margin-top: calc(var(--main-size) * 2);
-    margin-right: calc(var(--main-size) * 1);
-    margin-left: calc(var(--main-size) * 0.5);
+    margin: calc(var(--main-size) * 2) calc(var(--main-size) * 1) 0 calc(var(--main-size) * 0.5);
     flex-shrink: 0;
     border: none;
     outline: none;
@@ -154,22 +151,26 @@ h3 {
     color: #000;
     transform: translateY(-0.64vh);
 }
+
 .save:focus,
 .new_sets:focus {
     transform: translateY(0.0vh);
     transition: 0.3s;
 }
+
 .row {
     margin-top: 10px;
 }
+
 .input {
     margin-top: 5px;
     padding: 10px;
     border: 1px dashed #ffdb4d;
     outline: none;
     color: #aaa;
-    border-color: ;
+    /*border-color: ;*/
 }
+
 .input:focus {
     border: 3px solid #ffdb4d;
     transition: 0.4s;
