@@ -20,6 +20,7 @@ document.getElementById('getsearch').addEventListener("click", function () {
     generate_link(get_name())
 });
 
+
 function get_name() {
     // mus=externalAPI.getCurrentTrack();
     // if(mus != null){return mus.title+' '+mus.artists[0].title}
