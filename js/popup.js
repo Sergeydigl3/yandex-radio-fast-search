@@ -30,26 +30,25 @@ const scName = 'SoundCloud';
 const yaLink = 'https://music.yandex.ru/search?text={0}';
 const yaName = 'Yandex.Music';
 
+//input control
 function set_input_error(text) {
     document.getElementById('error_text').innerHTML = text
 }
-
 function set_input_border(border) {
     document.getElementById('set_link').style.border = border;
 }
 
+//preset control
 function setPreset(value) {
     chrome.storage.sync.set({"default_link": value});
     localStorage['default_link'] = value;
     console.log(localStorage['default_link']);
 }
-
 function setName(value) {
     chrome.storage.sync.set({"default_name": value});
     localStorage['default_name'] = value;
     console.log(localStorage['default_name']);
 }
-
 function check_rules(input) {
     if (!(input.startsWith('http://') || input.startsWith('https://'))) return 1;
     if (!(input.includes('{0}'))) return 2;
@@ -70,6 +69,7 @@ document.getElementById('ya').addEventListener("click", function () {
     setPreset(yaLink);
 });
 
+//input listners
 const input = document.getElementById('set_link');
 input.addEventListener("input", function () {
     if (input.value === "") {
@@ -126,6 +126,7 @@ input.addEventListener("focus", function () {
     }
 });
 
+// Save button
 document.getElementById('save_btn').addEventListener("click", function () {
     if (check_rules(input.value) === 3) {
         setPreset(input.value);

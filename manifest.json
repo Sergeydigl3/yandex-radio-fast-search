@@ -22,7 +22,7 @@
         "http://radio.yandex.ru/*",
         "https://radio.yandex.ru/*"
       ],
-      "js": [ "third/jquery-3.3.1.min.js","js/prog.js" ]
+      "js": [ "third/jquery-3.3.1.min.js", "js/prog.js" ]
     }
   ]
 }
