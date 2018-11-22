@@ -1,7 +1,7 @@
 {
   "manifest_version": 2, 
   "name": "Yandex.Radio Fast Search",
-  "version": "0.1",
+  "version": "1.2",
 
   "description": "Быстрый поиск музыки",
   "short_name": "Fast Search",
