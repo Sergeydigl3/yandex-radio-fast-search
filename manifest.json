@@ -1,19 +1,19 @@
 {
-  "manifest_version": 2, // Начиная с Chrome 18 ставим 2, иначе 1 (не поддерживается такое старьё)
-  "name": "Yandex.Radio Fast Search", // Название расширения
-  "version": "0.1", // Версия расширения
+  "manifest_version": 2, 
+  "name": "Yandex.Radio Fast Search",
+  "version": "0.1",
 
-  "description": "Быстрый поиск музыки", // Описание приложения
-  "short_name": "Fast Search", // Короткое название расширения (~12 символов) для тех мест, где мало места для вывода полного названия
+  "description": "Быстрый поиск музыки",
+  "short_name": "Fast Search",
   "permissions": [
     "storage",
-    "tabs", // Доступ к объекту Tabs
-    "activeTab" // Доступ к объекту ActiveTabs
+    "tabs",
+    "activeTab"
   ],
   "browser_action": {
-    "default_title": "Yandex.Radio Search", // Заголовок, который отображается при наведении
-    "default_icon": "icon.png", // Иконка для отображения
-    "default_popup": "popup.html" // страница (окно), которая будет отображаться при клике на иконку
+    "default_title": "Yandex.Radio Search", 
+    "default_icon": "icon.png", 
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
